@@ -22,28 +22,33 @@ import {
 import {
   Colors,
   DebugInstructions,
-  Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Card from './components/Card';
 import HomeScreen from './components/HomeScreen';
-function HandleClick(){
-  alert("Hii");
-}
+import {colors} from "./global/styles";
+import SignInScreen from './screens/authScreens/SignInScreen';
+
 
 function App(){
   return(
-    <View>
-      <Text>
-        Hello
-      </Text>
-      <HomeScreen>
-      <Button title="Press Me" onPress={HandleClick}/>
-      </HomeScreen>
+    <View style ={styles.container}>
+    <StatusBar 
+            barStyle = "light-content"
+            backgroundColor = {colors.statusbar}
+                />
+      <SignInScreen />
+      <HomeScreen />
       
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1
+  }
+})
 
 export default App;

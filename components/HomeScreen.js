@@ -11,6 +11,7 @@ import { Alert,
     useColorScheme,
     View, } from "react-native";
 import Card from "./Card";
+import {colors, parameters} from "../global/styles";
 
 
 
@@ -73,13 +74,14 @@ const deviceHeight = Math.round(Dimensions.get('window').height)
                 {/* <Card path={require('../assets/img1.png')}/>
                 <Card path={require('../assets/img2.png')}/>
                 <Card path={require('../assets/img3.png')}/> */}
+                
 
                 <FlatList 
                     renderItem={({item})=>{
                         return<Card info={item}></Card>
                     }}
                     data={restaurants}
-                    keyExtractor ={(restaurant)=>restaurant.id.toString}
+                    keyExtractor ={(restaurant)=>restaurant.id.toString()}
                 />
 
             </View>
@@ -90,6 +92,10 @@ const deviceHeight = Math.round(Dimensions.get('window').height)
             alignItems: "center",
             backgroundColor: '#6c5ce7',
             height:deviceHeight,
+        },
+        header:{
+            flexDirection:"row",
+            backgroundColor:colors.header
         }
     })
 
